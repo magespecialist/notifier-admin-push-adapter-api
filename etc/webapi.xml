@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © MageSpecialist - Skeeller srl. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ -->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+
+    <route url="/V1/msp-notifier/admin-push-adapter/queue" method="GET">
+        <service class="MSP\NotifierAdminPushAdapterApi\Api\AdminPushRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="MSP_NotifierAdminPushAdapterApi::queue"/>
+        </resources>
+    </route>
+
+    <route url="/V1/msp-notifier/admin-push-adapter/queue" method="DELETE">
+        <service class="MSP\NotifierAdminPushAdapterApi\Api\AdminPushRepositoryInterface" method="clear"/>
+        <resources>
+            <resource ref="MSP_NotifierAdminPushAdapterApi::queue_delete"/>
+        </resources>
+    </route>
+
+    <route url="/V1/msp-notifier/admin-push-adapter/queue/:adminPushIid" method="DELETE">
+        <service class="MSP\NotifierAdminPushAdapterApi\Api\AdminPushRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="MSP_NotifierAdminPushAdapterApi::queue_delete"/>
+        </resources>
+    </route>
+
+    <route url="/V1/msp-notifier/admin-push-adapter/icon" method="GET">
+        <service class="MSP\NotifierAdminPushAdapterApi\Api\IconRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="MSP_NotifierAdminPushAdapterApi::queue"/>
+        </resources>
+    </route>
+
+    <route url="/V1/msp-notifier/admin-push-adapter/icon/:iconId" method="GET">
+        <service class="MSP\NotifierAdminPushAdapterApi\Api\IconRepositoryInterface" method="get"/>
+        <resources>
+            <resource ref="MSP_NotifierAdminPushAdapterApi::general"/>
+        </resources>
+    </route>
+</routes>
