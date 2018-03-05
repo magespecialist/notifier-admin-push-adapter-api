@@ -1,1 +1,1 @@
-# notifier-admin-push-adapter-api
+Please refer to: https://github.com/magespecialist/notifier .
